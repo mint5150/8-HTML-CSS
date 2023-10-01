@@ -1,12 +1,175 @@
 ①OOCSS、BEM、SMACSS、FLOCSSについて調べてまとめてください。
 (どうやって使用するのか具体例も含めて)
 
+OOCSS
+・Object Oriented CSS の略
+・構造と見た目を分離するオブジェクト指向のcss
+
+使用例
+<ul>
+  <li class="label label-news">NEWS</li>
+  <li class="label label-pickup">PICKUP</li>
+  <li class="label label-info">INFO</li>
+</ul>
+
+.label {
+  margin-right:.5em;
+  &-news{
+    background-color:yellow;
+  }
+  &-pickup{
+    background-color:pink;
+  }
+  &-info{
+    background-color:#73d1fa;
+  }
+}
+
+--------------------------------------------------------------
+
+BEM
+・BlockElementModifierの略
+・厳格なクラス命名規則が特徴
+・Block ＞ Element ＞ Modifier の順でつなぎ合わせる
+・block と element はアンダースコア2つで区切る
+・element と modifier はハイフン2つで区切る
+・各々が複数単語になる場合はハイフン1つで区切る
+
+
+使用例
+<div class="Block">
+    <div class="Block__element">
+        <div class="Block__element--modifier"></div>
+    </div>
+</div>
+
+.Block {
+    &__element {
+        &--modifier {
+        }
+    }
+}
+
+--------------------------------------------------------------
+
+SMACSS
+・Scalable and Modular Architecture for CSS の略
+・オブジェクト指向でベース、レイアウト、モジュール、状態、テーマに分類して記述する
+
+使用例
+
+ベース
+body {
+    background:white;
+}
+
+レイアウト
+.l-main {
+    width:70%;
+}
+
+モジュール
+.button_normal{
+    padding:10px;
+    text-align:center;
+    min-width:150px;
+    background:#000;
+    border-radius:5px;
+}
+
+状態
+.is-active{
+    display:block;
+}
+
+テーマ
+.theme-background{
+    background:#F00;
+}
+
+--------------------------------------------------------------
+
+FLOCSS
+・Foundation Layout Object css の略
+・Foundation、Layout、Objectの3つのレイヤーで構成する
+・ObjectレイヤーはComponent、Project、Utilityの3つの子レイヤーを持つ
+
+使用例
+<a class="btnLayout btnLayout_red u-ma" href="#">Button</a>
+
+.btnLayout {
+    padding:.25em 1em;
+    text-align:center;
+    display:inline-block;
+    border:1px solid #333;
+    border-radius:.25em;
+    &_red {
+        color:#fff;
+        background:#c00;
+    }
+}
+
+.u-ma {
+  margin:1.5em;
+}
+
+--------------------------------------------------------------
+
+②OOCSS、BEM、SMACSSのメリット、デメリットを挙げてください。
+
+OOCSS
+メリット
+・最初に構造を把握して設計しておくことで記述が楽になる
+・CSSの記述量を少なくできる
+・クラス名から構造が想像できる
+・CMSなどと相性が良い
+
+デメリット
+・影響範囲が分かりにくくメンテナンス性が悪い
+
+--------------------------------------------------------------
+
+BEM
+メリット
+・影響範囲が厳格に絞られるのでメンテナンス性が良い
+
+デメリット
+・記述が冗長になる
+
+--------------------------------------------------------------
+
+SMACSS
+メリット
+・記述量を減らせる
+・メンテナンス性もある程度良い
+
+デメリット
+・複数人で作業する場合に共通認識がないとコードがカオスになる
+
+--------------------------------------------------------------
 
 参考
+https://www.northdetail.co.jp/blog/1953/
+https://www.wakuwakubank.com/posts/627-design-css/
+https://kuroeveryday.blogspot.com/2017/03/css-structure-and-rules.html
+https://webdesign-trends.net/entry/9214
+https://qiita.com/kugyu10/items/c56ef23bb3831b7b4644
 
 
 
-②またOOCSS、BEM、SMACSSのメリット、デメリットを挙げてください。
 
 
-参考
+
+
+
+
+
+
+
+
+
+
+
+
+
+
